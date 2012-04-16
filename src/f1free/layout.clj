@@ -1,5 +1,5 @@
 
-(ns footiefree.layout
+(ns f1free.layout
   (:use [hiccup.core :only [html]]
         [hiccup.form-helpers :only [form-to submit-button label text-field]]
         [hiccup.page-helpers :only [include-css]]))
@@ -12,11 +12,11 @@
   [& body]
   (html
     [:head
-      [:title "Footie Free Twitter"]
+      [:title "F1 Free Twitter"]
       (include-css "/css/default.css")]
     [:body
       [:div.container
-        [:h1.whitebox "Footie Free Twitter"]
+        [:h1.whitebox "F1 Free Twitter"]
         body
         [:div.footer "by rod"]]]))
 
@@ -46,7 +46,7 @@
 (defn index-page []
   (content
     [:div.intro
-      [:div.message "Welcome to a Football free Twitter, just enter your nickname!"]
+      [:div.message "Welcome to an F1 free Twitter, just enter your nickname!"]
       [:div.whitebox
         (form-to [:get "/"]
           (label "nick" "Username")

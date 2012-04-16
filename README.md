@@ -1,6 +1,4 @@
-# Footie Free!
+# F1 Free!
 
-Stupid Clojure app for showing Twitter feeds with all mentions of football removed.
+Stupid Clojure app for showing Twitter feeds with all mentions of f1 removed.
 :D
-
-![FFT Screenshot](http://pu-gh.com/fft.png)

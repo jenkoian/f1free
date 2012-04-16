@@ -1,29 +1,29 @@
 
-(ns footiefree.core
+(ns f1free.core
   (:use [compojure.core]
         [ring.adapter.jetty :as ring]
         [cheshire.core]
         [clojure.string :only [split]])
-  (:require [footiefree.layout :as layout]
+  (:require [f1free.layout :as layout]
             [compojure.handler :as handler]
             [compojure.route :as route]))
 
 (def apiurl "https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=%s&count=10")
 
-(def footy-words #{
-  "goal"
-  "ref"
+(def f1-words #{
+  "f1"
+  "race"
 })
 
-(defn- is-footy-related
+(defn- is-f1-related
   [tweet]
   (let [text (.toLowerCase (:text tweet))]
-    (not (some footy-words 
+    (not (some f1-words 
                (split text #"\s+")))))
 
 (defn- get-tweets
   [nick]
-  (filter is-footy-related
+  (filter is-f1-related
     (parse-stream 
       (clojure.java.io/reader 
         (format apiurl nick)) true)))
